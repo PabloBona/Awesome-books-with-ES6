@@ -5,7 +5,6 @@ import {
 } from './navigationManager.js';
 
 import { showBorder } from './bookBorder.js';
-
 class Books {
   constructor() {
     this.books = [];
@@ -105,4 +104,4 @@ class Books {
   }
 }
 
-new Books();
+export const books = new Books();
