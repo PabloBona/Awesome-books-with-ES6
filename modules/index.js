@@ -1,23 +1,21 @@
+import {
+  showAwesomeBooks,
+  showAddBooks,
+  showContact,
+} from './navigationManager.js';
+
+import { showBorder } from './bookBorder.js';
+
 class Books {
   constructor() {
     this.books = [];
-    this.bookList = document.querySelector('.book-List');
-    this.addForm = document.querySelector('.book-form');
-    this.bar = document.querySelector('#bar');
-    this.newTitle = document.querySelector('#h1-new');
-    this.contactSection = document.querySelector('#contact');
-
+    this.initDOMElements(); // call initDOMElements method to initialize DOM
     this.loadBooksFromLocalStorage();
     this.addForm.addEventListener('submit', this.saveFormSubmit.bind(this));
-
-    this.navContact = document.querySelector('#nav-contact');
-    this.listButton = document.querySelector('#nav-list');
-    this.addButton = document.querySelector('#nav-add');
-    this.addTitle = document.querySelector('#h1-add');
-    this.listButton.addEventListener('click', this.showAwesomeBooks.bind(this));
-    this.addButton.addEventListener('click', this.showAddBooks.bind(this));
-    this.navContact.addEventListener('click', this.showContact.bind(this));
-    this.showAwesomeBooks();
+    this.listButton.addEventListener('click', showAwesomeBooks);
+    this.addButton.addEventListener('click', showAddBooks);
+    this.navContact.addEventListener('click', showContact);
+    showAwesomeBooks();
   }
 
   createBookElement(book) {
@@ -65,15 +63,6 @@ class Books {
     }
   }
 
-  showBorder() {
-    const dataSaved = localStorage.getItem('books');
-    if (dataSaved && dataSaved.includes('title')) {
-      this.bookList.classList.add('border');
-    } else {
-      this.bookList.classList.remove('border');
-    }
-  }
-
   addBook(book) {
     this.books.push(book);
     this.saveBooksToLocalStorage();
@@ -98,33 +87,22 @@ class Books {
     this.addForm.reset();
   }
 
-  showAwesomeBooks() {
-    this.addForm.classList.add('hidden');
-    this.bar.classList.add('hidden');
-    this.newTitle.classList.add('hidden');
-    this.contactSection.classList.add('hidden');
-    this.bookList.classList.remove('hidden');
-    this.addTitle.classList.remove('hidden');
+  showBorder() {
+    showBorder(this.bookList);
   }
 
-  showAddBooks() {
-    this.bookList.classList.add('hidden');
-    this.bar.classList.add('hidden');
-    this.addTitle.classList.add('hidden');
-    this.addForm.classList.remove('hidden');
-    this.contactSection.classList.add('hidden');
-    this.newTitle.classList.remove('hidden');
-  }
-
-  showContact() {
-    this.bookList.classList.add('hidden');
-    this.addTitle.classList.add('hidden');
-    this.addForm.classList.add('hidden');
-    this.bar.classList.add('hidden');
-    this.newTitle.classList.add('hidden');
-    this.contactSection.classList.remove('hidden');
+  initDOMElements() {
+    this.bookList = document.querySelector('.book-List');
+    this.addForm = document.querySelector('.book-form');
+    this.bar = document.querySelector('#bar');
+    this.newTitle = document.querySelector('#h1-new');
+    this.contactSection = document.querySelector('#contact');
+    this.navContact = document.querySelector('#nav-contact');
+    this.listButton = document.querySelector('#nav-list');
+    this.addButton = document.querySelector('#nav-add');
+    this.addTitle = document.querySelector('#h1-add');
+    this.renderBookList();
   }
 }
 
-// eslint-disable-next-line no-new
 new Books();
