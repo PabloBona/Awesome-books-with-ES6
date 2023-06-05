@@ -4,11 +4,14 @@ import {
   showContact,
 } from './navigationManager.js';
 
-import { showBorder } from './bookBorder.js';
+import showBorder from './bookBorder.js';
 
-class Books {
+export default class Books {
   constructor() {
     this.books = [];
+  }
+
+  init() {
     this.initDOMElements(); // call initDOMElements method to initialize DOM
     this.loadBooksFromLocalStorage();
     this.addForm.addEventListener('submit', this.saveFormSubmit.bind(this));
@@ -104,5 +107,3 @@ class Books {
     this.renderBookList();
   }
 }
-
-export default new Books();

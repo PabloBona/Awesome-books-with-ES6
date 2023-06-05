@@ -1,4 +1,4 @@
-export default showBorder = (bookList) => {
+export default (bookList) => {
   const dataSaved = localStorage.getItem('books');
   if (dataSaved && dataSaved.includes('title')) {
     bookList.classList.add('border');

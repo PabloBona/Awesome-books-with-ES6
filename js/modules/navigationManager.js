@@ -1,4 +1,4 @@
-export function showAwesomeBooks() {
+export const showAwesomeBooks = () => {
   const addForm = document.querySelector('.book-form');
   const bar = document.querySelector('#bar');
   const newTitle = document.querySelector('#h1-new');
@@ -12,9 +12,9 @@ export function showAwesomeBooks() {
   contactSection.classList.add('hidden');
   bookList.classList.remove('hidden');
   addTitle.classList.remove('hidden');
-}
+};
 
-export function showAddBooks() {
+export const showAddBooks = () => {
   const bookList = document.querySelector('.book-List');
   const bar = document.querySelector('#bar');
   const addTitle = document.querySelector('#h1-add');
@@ -28,9 +28,9 @@ export function showAddBooks() {
   addForm.classList.remove('hidden');
   contactSection.classList.add('hidden');
   newTitle.classList.remove('hidden');
-}
+};
 
-export function showContact() {
+export const showContact = () => {
   const bookList = document.querySelector('.book-List');
   const addTitle = document.querySelector('#h1-add');
   const addForm = document.querySelector('.book-form');
@@ -44,4 +44,4 @@ export function showContact() {
   bar.classList.add('hidden');
   newTitle.classList.add('hidden');
   contactSection.classList.remove('hidden');
-}
+};
