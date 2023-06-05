@@ -1,4 +1,4 @@
-## Copyright 2021, Pablo Bonasera & Joseph Lwanzo Khausi
+## Copyright 2021, Pablo Bonasera
 
 ###### Awesome-books-with-ES6 can be a webpage/website, a web app, a software and so on
 
