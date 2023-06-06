@@ -8,6 +8,57 @@
     <title>Awesome books: with ES6</title>
   </head>
   <body>
-    <script src="./js/index.js"></script>
+    <header>
+      <nav class="nav">
+        <p>Awesome Books</p>
+        <ul>
+          <li><a id="nav-list" href="#">List</a></li>
+          <li><a id="nav-add" href="#">Add new</a></li>
+          <li><a id="nav-contact" href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="current_date"></div>
+    </header>
+    <h1 id="h1-add" class=" ">All awesome Books</h1>
+    <h1 id="h1-new" class="">Add a new Book</h1>
+    <div class="book-List"></div>
+    <hr id="bar" class="" />
+    <form class="book-form" method="post">
+      <div>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Title"
+          required
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          name="author"
+          id="author"
+          placeholder="Author"
+          required
+        />
+      </div>
+      <div><button type="submit">Add</button></div>
+    </form>
+    <article id="contact">
+      <div>
+        <h2>Contact Information</h2>
+        <p>Do you have any questions or just want to say "Hello"?</p>
+        <p>You can reach out to us!</p>
+        <ul>
+          <li>Our email mail@mail.com</li>
+          <li>Our phone number: 00444578745</li>
+          <li>Our address StreetName 22, 84503 City,Country</li>
+        </ul>
+      </div>
+    </article>
+    <footer class="footer">
+      <p>Copyright ...</p>
+    </footer>
+    <script type="module" src="./js/index.js"></script>
   </body>
 </html>
